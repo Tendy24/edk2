@@ -32,27 +32,25 @@
 **/
 STATIC
 EFI_STATUS
-PlatformHasAcpiDt (
-  IN EFI_HANDLE  ImageHandle
-  )
+PlatformHasAcpiDt(
+    IN EFI_HANDLE ImageHandle)
 {
-  if (!PcdGetBool (PcdForceNoAcpi)) {
+  if (!PcdGetBool(PcdForceNoAcpi))
+  {
     // Expose ACPI tables
-    return gBS->InstallProtocolInterface (
-                  &ImageHandle,
-                  &gEdkiiPlatformHasAcpiGuid,
-                  EFI_NATIVE_INTERFACE,
-                  NULL
-                  );
+    return gBS->InstallProtocolInterface(
+        &ImageHandle,
+        &gEdkiiPlatformHasAcpiGuid,
+        EFI_NATIVE_INTERFACE,
+        NULL);
   }
 
   // Expose the Device Tree.
-  return gBS->InstallProtocolInterface (
-                &ImageHandle,
-                &gEdkiiPlatformHasDeviceTreeGuid,
-                EFI_NATIVE_INTERFACE,
-                NULL
-                );
+  return gBS->InstallProtocolInterface(
+      &ImageHandle,
+      &gEdkiiPlatformHasDeviceTreeGuid,
+      EFI_NATIVE_INTERFACE,
+      NULL);
 }
 
 /** Entry point for Kvmtool Platform Dxe
@@ -68,26 +66,25 @@ PlatformHasAcpiDt (
 **/
 EFI_STATUS
 EFIAPI
-KvmtoolPlatformDxeEntryPoint (
-  IN EFI_HANDLE        ImageHandle,
-  IN EFI_SYSTEM_TABLE  *SystemTable
-  )
+KvmtoolPlatformDxeEntryPoint(
+    IN EFI_HANDLE ImageHandle,
+    IN EFI_SYSTEM_TABLE *SystemTable)
 {
-  EFI_STATUS  Status;
+  EFI_STATUS Status;
 
-  if (PcdGetBool (PcdEmuVariableNvModeEnable)) {
+  if (PcdGetBool(PcdEmuVariableNvModeEnable))
+  {
     // The driver implementing the variable service can now be dispatched.
-    Status = gBS->InstallProtocolInterface (
-                    &gImageHandle,
-                    &gEdkiiNvVarStoreFormattedGuid,
-                    EFI_NATIVE_INTERFACE,
-                    NULL
-                    );
-    ASSERT_EFI_ERROR (Status);
+    Status = gBS->InstallProtocolInterface(
+        &gImageHandle,
+        &gEdkiiNvVarStoreFormattedGuid,
+        EFI_NATIVE_INTERFACE,
+        NULL);
+    ASSERT_EFI_ERROR(Status);
   }
 
-  Status = PlatformHasAcpiDt (ImageHandle);
-  ASSERT_EFI_ERROR (Status);
+  Status = PlatformHasAcpiDt(ImageHandle);
+  ASSERT_EFI_ERROR(Status);
 
   return Status;
 }
