@@ -51,6 +51,7 @@
   DEFINE NETWORK_HTTP_BOOT_ENABLE       = FALSE
   DEFINE NETWORK_ALLOW_HTTP_CONNECTIONS = TRUE
   DEFINE NETWORK_ISCSI_ENABLE           = TRUE
+  DEFINE NETWORK_ISCSI_DEFAULT_ENABLE   = FALSE
   DEFINE NETWORK_PXE_BOOT_ENABLE        = TRUE
 
 !include NetworkPkg/NetworkDefines.dsc.inc
@@ -530,7 +531,7 @@
   ReportStatusCodeLib|MdeModulePkg/Library/SmmReportStatusCodeLib/StandaloneMmReportStatusCodeLib.inf
   CcExitLib|UefiCpuPkg/Library/CcExitLibNull/CcExitLibNull.inf
   MemLib|StandaloneMmPkg/Library/StandaloneMmMemLib/StandaloneMmMemLib.inf
-  DevicePathLib|MdePkg/Library/UefiDevicePathLib/UefiDevicePathLibStandaloneMm.inf
+  DevicePathLib|MdePkg/Library/UefiDevicePathLib/UefiDevicePathLibBase.inf
   BaseCryptLib|CryptoPkg/Library/BaseCryptLib/SmmCryptLib.inf
 
 [LibraryClasses.common.MM_CORE_STANDALONE]
