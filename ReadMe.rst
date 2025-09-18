@@ -2,8 +2,7 @@
 EDK II Project
 ==============
 
-A modern, feature-rich, cross-platform firmware development
-environment for the UEFI and PI specifications from www.uefi.org.
+A modern, feature-rich, cross-platform firmware development environment for the UEFI and PI specifications from www.uefi.org.
 
 .. image:: https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Ftianocore%2Fedk2-pytool-extensions%2Frefs%2Fheads%2Fmaster%2Fpyproject.toml&query=%24.%5B'requires-python'%5D&style=for-the-badge&logo=python&logoColor=ffd343&label=Minimum%20Python%20Version%20for%20CI&color=3776ab&link=https%3A%2F%2Fwww.python.org%2Fdownloads%2F
    :alt: CI Minimum Python Version
@@ -15,12 +14,12 @@ Other Python requirements for build can be found in the `EDK II Build Instructio
 Core CI Build Status
 --------------------
 
-============================= ================= =============== ===================
- Host Type & Toolchain        Build Status      Test Status     Code Coverage
-============================= ================= =============== ===================
-Windows_VS_                   |WindowsCiBuild|  |WindowsCiTest| |WindowsCiCoverage|
-Ubuntu_GCC_                   |UbuntuCiBuild|   |UbuntuCiTest|  |UbuntuCiCoverage|
-============================= ================= =============== ===================
++-----------------------------+------------------+---------------+-------------------+
+| Host Type & Toolchain       | Build Status     | Test Status   | Code Coverage     |
++-----------------------------+------------------+---------------+-------------------+
+| Windows_VS_                 | |WindowsCiBuild| |WindowsCiTest| |WindowsCiCoverage|
+| Ubuntu_GCC_                 | |UbuntuCiBuild|  |UbuntuCiTest|  |UbuntuCiCoverage| |
++-----------------------------+------------------+---------------+-------------------+
 
 `More CI Build information <.pytool/Readme.md>`__
 
@@ -28,38 +27,38 @@ Platform CI Build Status
 ------------------------
 
 Microsoft Windows Visual Studio (VS)
-````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-============================= ================= ============= ============= ==============
- Toolchain                    CONFIG            DEBUG         RELEASE       NOOPT
-============================= ================= ============= ============= ==============
-EmulatorPkg_Win_VS_           | IA32            |em32d|       |em32r|       |em32n|
-|                             | X64             |em64d|       |em64r|       |em64n|
-|                             | IA32 FULL       |em32fd|      |em32fr|      |em32fn|
-|                             | X64 FULL        |em64fd|      |em64fr|      |em64fn|
-OvmfPkg_Win_VS_               | IA32            |op32d|       |op32r|       |op32n|
-|                             | X64             |op64d|       |op64r|       |op64n|
-|                             | IA32 X64        |op3264d|     |op3264r|     |op3264n|
-|                             | IA32 X64 FULL   |op3264fd|    |op3264fr|    **N/A**
-============================= ================= ============= ============= ==============
++-----------------------------+------------------+-------------+-------------+-------------+
+| Toolchain                   | CONFIG           | DEBUG       | RELEASE     | NOOPT       |
++-----------------------------+------------------+-------------+-------------+-------------+
+| EmulatorPkg_Win_VS_         | IA32             |em32d|       |em32r|       |em32n|      |
+|                             | X64              |em64d|       |em64r|       |em64n|      |
+|                             | IA32 FULL        |em32fd|      |em32fr|      |em32fn|     |
+|                             | X64 FULL         |em64fd|      |em64fr|      |em64fn|     |
+| OvmfPkg_Win_VS_             | IA32             |op32d|       |op32r|       |op32n|      |
+|                             | X64              |op64d|       |op64r|       |op64n|      |
+|                             | IA32 X64         |op3264d|     |op3264r|     |op3264n|   |
+|                             | IA32 X64 FULL    |op3264fd|    |op3264fr|    **N/A**    |
++-----------------------------+------------------+-------------+-------------+-------------+
 
 Ubuntu 24.04
-`````````````````
+~~~~~~~~~~~~
 
-============================= ================= ============= ============= ==============
- Toolchain                    CONFIG            DEBUG         RELEASE       NOOPT
-============================= ================= ============= ============= ==============
-ArmVirtPkg_Ubuntu_GCC_        | AARCH64         |avAArch64du| |avAArch64ru| |avAArch64nu|
-|                             | ARM             |avArmdu|     |avArmru|     |avArmnu|
-EmulatorPkg_Ubuntu_GCC_       | IA32            **N/A**       **N/A**       **N/A**
-|                             | X64             |em64du|      |em64ru|      |em64nu|
-|                             | IA32 FULL       **N/A**       **N/A**       **N/A**
-|                             | X64 FULL        |em64fdu|     |em64fru|     |em64fnu|
-OvmfPkg_Ubuntu_GCC_           | IA32            |op32du|      |op32ru|      |op32nu|
-|                             | X64             |op64du|      |op64ru|      |op64nu|
-|                             | IA32 X64        |op3264du|    |op3264ru|    |op3264nu|
-|                             | IA32 X64 FULL   |op3264fdu|   |op3264fru|   **N/A**
-============================= ================= ============= ============= ==============
++-----------------------------+------------------+-------------+-------------+-------------+
+| Toolchain                   | CONFIG           | DEBUG       | RELEASE     | NOOPT       |
++-----------------------------+------------------+-------------+-------------+-------------+
+| ArmVirtPkg_Ubuntu_GCC_      | AARCH64          |avAArch64du| |avAArch64ru| |avAArch64nu|
+|                             | ARM              |avArmdu|     |avArmru|     |avArmnu|    |
+| EmulatorPkg_Ubuntu_GCC_     | IA32             **N/A**       **N/A**       **N/A**      |
+|                             | X64              |em64du|      |em64ru|      |em64nu|     |
+|                             | IA32 FULL        **N/A**       **N/A**       **N/A**      |
+|                             | X64 FULL         |em64fdu|     |em64fru|     |em64fnu|    |
+| OvmfPkg_Ubuntu_GCC_         | IA32             |op32du|      |op32ru|      |op32nu|    |
+|                             | X64              |op64du|      |op64ru|      |op64nu|    |
+|                             | IA32 X64         |op3264du|    |op3264ru|    |op3264nu|  |
+|                             | IA32 X64 FULL    |op3264fdu|   |op3264fru|   **N/A**     |
++-----------------------------+------------------+-------------+-------------+-------------+
 
 |TCBZ_2639|_ - EmulatorPkg Ubuntu GCC5 Segfaults during execution.
 
@@ -103,39 +102,27 @@ that are covered by additional licenses.
 -  `MdePkg/Library/MipiSysTLib/mipisyst <https://github.com/MIPI-Alliance/public-mipi-sys-t/blob/aae857d0d05ac65152ed24992a4acd834a0a107c/LICENSE>`__
 -  `SecurityPkg/DeviceSecurity/SpdmLib/libspdm <https://github.com/DMTF/libspdm/blob/main/LICENSE.md>`__
 
-The EDK II Project is composed of packages. The maintainers for each package
-are listed in `Maintainers.txt <Maintainers.txt>`__.
+The EDK II Project is composed of packages. The maintainers for each package are listed in `Maintainers.txt <Maintainers.txt>`__.
 
 Resources
 ---------
 
 -  `TianoCore <http://www.tianocore.org>`__
--  `EDK
-   II <https://github.com/tianocore/tianocore.github.io/wiki/EDK-II>`__
--  `Getting Started with EDK
-   II <https://github.com/tianocore/tianocore.github.io/wiki/Getting-Started-with-EDK-II>`__
--  `Mailing
-   Lists <https://github.com/tianocore/tianocore.github.io/wiki/Mailing-Lists>`__
--  `How To
-   Contribute <https://github.com/tianocore/tianocore.github.io/wiki/How-To-Contribute>`__
--  `Release
-   Planning <https://github.com/tianocore/tianocore.github.io/wiki/EDK-II-Release-Planning>`__
+-  `EDK II <https://github.com/tianocore/tianocore.github.io/wiki/EDK-II>`__
+-  `Getting Started with EDK II <https://github.com/tianocore/tianocore.github.io/wiki/Getting-Started-with-EDK-II>`__
+-  `Mailing Lists <https://github.com/tianocore/tianocore.github.io/wiki/Mailing-Lists>`__
+-  `How To Contribute <https://github.com/tianocore/tianocore.github.io/wiki/How-To-Contribute>`__
+-  `Release Planning <https://github.com/tianocore/tianocore.github.io/wiki/EDK-II-Release-Planning>`__
 
 Code Contributions
 ------------------
 
 To make a contribution to a TianoCore project, follow these steps.
 
-#. Create a change description in the format specified below to
-    use in the source control commit log.
-#. Your commit message must include your ``Signed-off-by`` signature
-#. Submit your code to the TianoCore project using the process
-    that the project documents on its web page. If the process is
-    not documented, then submit the code on development email list
-    for the project.
-#. It is preferred that contributions are submitted using the same
-    copyright license as the base project. When that is not possible,
-    then contributions using the following licenses can be accepted:
+1. Create a change description in the format specified below to use in the source control commit log.
+2. Your commit message must include your ``Signed-off-by`` signature.
+3. Submit your code to the TianoCore project using the process that the project documents on its web page. If the process is not documented, then submit the code on development email list for the project.
+4. It is preferred that contributions are submitted using the same copyright license as the base project. When that is not possible, then contributions using the following licenses can be accepted:
 
 -  Apache License, Version 2.0: https://opensource.org/license/apache-2-0/
 -  BSD (2-clause): https://opensource.org/license/BSD-2-Clause
@@ -146,33 +133,24 @@ To make a contribution to a TianoCore project, follow these steps.
 
 For documentation:
 
--  FreeBSD Documentation License
-    https://www.freebsd.org/copyright/freebsd-doc-license.html
+-  FreeBSD Documentation License https://www.freebsd.org/copyright/freebsd-doc-license.html
 
 Contributions of code put into the public domain can also be accepted.
 
-Contributions using other licenses might be accepted, but further
-review will be required.
+Contributions using other licenses might be accepted, but further review will be required.
 
 Developer Certificate of Origin
 -------------------------------
 
-Your change description should use the standard format for a
-commit message, and must include your ``Signed-off-by`` signature.
+Your change description should use the standard format for a commit message, and must include your ``Signed-off-by`` signature.
 
-In order to keep track of who did what, all patches contributed must
-include a statement that to the best of the contributor's knowledge
-they have the right to contribute it under the specified license.
+In order to keep track of who did what, all patches contributed must include a statement that to the best of the contributor's knowledge they have the right to contribute it under the specified license.
 
-The test for this is as specified in the `Developer's Certificate of
-Origin (DCO) 1.1 <https://developercertificate.org/>`__. The contributor
-certifies compliance by adding a line saying
+The test for this is as specified in the `Developer's Certificate of Origin (DCO) 1.1 <https://developercertificate.org/>`__. The contributor certifies compliance by adding a line saying
 
 Signed-off-by: Developer Name developer@example.org
 
-where ``Developer Name`` is the contributor's real name, and the email
-address is one the developer is reachable through at the time of
-contributing.
+where ``Developer Name`` is the contributor's real name, and the email address is one the developer is reachable through at the time of contributing.
 
 ::
 
@@ -215,42 +193,28 @@ Sample Change Description / Commit Message
     Signed-off-by: Contributor Name <contributor@example.com>
 
 Notes for sample patch email
-````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  The first line of commit message is taken from the email's subject
-   line following ``[Repository/Branch PATCH]``. The remaining portion
-   of the commit message is the email's content.
+-  The first line of commit message is taken from the email's subject line following ``[Repository/Branch PATCH]``. The remaining portion of the commit message is the email's content.
 -  ``git format-patch`` is one way to create this format
 
 Definitions for sample patch email
-``````````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``Repository`` is the identifier of the repository the patch applies.
-    This identifier should only be provided for repositories other than
-    ``edk2``. For example ``edk2-BuildSpecification`` or ``staging``.
--  ``Branch`` is the identifier of the branch the patch applies. This
-    identifier should only be provided for branches other than
-   ``edk2/master``.
-    For example ``edk2/UDK2015``,
-   ``edk2-BuildSpecification/release/1.27``, or
-    ``staging/edk2-test``.
--  ``Module`` is a short identifier for the affected code or
-   documentation. For example ``MdePkg``, ``MdeModulePkg/UsbBusDxe``, ``Introduction``, or
-    ``EDK II INF File Format``.
+-  ``Repository`` is the identifier of the repository the patch applies. This identifier should only be provided for repositories other than ``edk2``. For example ``edk2-BuildSpecification`` or ``staging``.
+-  ``Branch`` is the identifier of the branch the patch applies. This identifier should only be provided for branches other than ``edk2/master``. For example ``edk2/UDK2015``, ``edk2-BuildSpecification/release/1.27``, or ``staging/edk2-test``.
+-  ``Module`` is a short identifier for the affected code or documentation. For example ``MdePkg``, ``MdeModulePkg/UsbBusDxe``, ``Introduction``, or ``EDK II INF File Format``.
 -  ``Brief-single-line-summary`` is a short summary of the change.
 -  The entire first line should be less than ~70 characters.
--  ``Full-commit-message`` a verbose multiple line comment describing
-    the change. Each line should be less than ~70 characters.
--  ``Signed-off-by`` is the contributor's signature identifying them
-    by their real/legal name and their email address.
+-  ``Full-commit-message`` a verbose multiple line comment describing the change. Each line should be less than ~70 characters.
+-  ``Signed-off-by`` is the contributor's signature identifying them by their real/legal name and their email address.
 
 Submodules
 ----------
 
 The current submodules used in EDK II are in `.gitmodules <.gitmodules>`__.
 
-To get a full, buildable EDK II repository, use following steps of git
-command
+To get a full, buildable EDK II repository, use following steps of git command
 
 .. code-block:: bash
 
@@ -259,8 +223,7 @@ command
   git submodule update --init
   cd ..
 
-If there's update for submodules, use following git commands to get
-the latest submodules code.
+If there's update for submodules, use following git commands to get the latest submodules code.
 
 .. code-block:: bash
 
@@ -268,12 +231,7 @@ the latest submodules code.
   git pull
   git submodule update
 
-Note: When cloning submodule repos, '--recursive' option is not
-recommended. EDK II itself will not use any code/feature from
-submodules in above submodules. So using '--recursive' adds a
-dependency on being able to reach servers we do not actually want
-any code from, as well as needlessly downloading code we will not
-use.
+Note: When cloning submodule repos, '--recursive' option is not recommended. EDK II itself will not use any code/feature from submodules in above submodules. So using '--recursive' adds a dependency on being able to reach servers we do not actually want any code from, as well as needlessly downloading code we will not use.
 
 .. ===================================================================
 .. This is a bunch of directives to make the README file more readable
