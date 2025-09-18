@@ -1,4 +1,3 @@
-#
 # This list is used by git-shortlog to update a few name translations
 # in the git archive to adjust for job changes or incorrect/inconsistent
 # name usage.
@@ -6,8 +5,7 @@
 # Please keep this file sorted alphabetically, and email in lowercase.
 # The format used is:
 #
-#   Firstname Lastname <email@domain.tld>
-#
+#	Firstname Lastname <email@domain.tld>
 
 Aaron Li <aaron.li@intel.com> <songpeng.li@intel.com>
 Antoine Cœur <coeur@gmx.fr>
@@ -77,6 +75,8 @@ Vladimir Olovyannikov <vladimir.olovyannikov@broadcom.com> Vladimir Olovyannikov
 Wei6 Xu <wei6.xu@intel.com>
 Yonghong Zhu <yonghong.zhu@intel.com>
 Yonghong Zhu <yonghong.zhu@intel.com> <yzhu52@Edk2>
-Yu-Chen Lin <yuchenlin@synology.com>
+Zhiguang Liu <zhiguang.liu@intel.com>
+Zhichao Gao <zhichao.gao@intel.com>
+Zhiguang Liu <zhiguang.liu@intel.com>
 Zhichao Gao <zhichao.gao@intel.com>
 Zhiguang Liu <zhiguang.liu@intel.com>
